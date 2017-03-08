@@ -1,0 +1,75 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>animation动画</title>
+	<style>
+	body,div,ul,img{
+		margin:0;
+		padding:0;
+	}
+	ul{
+		list-style: none;
+	}
+	img{
+		border: 0;
+		vertical-align: top;
+	}
+	.wrap{
+		width: 400px;
+		height: 100px;
+		position: relative;
+		overflow: hidden;
+		border: 3px solid #000;
+		margin:200px auto;
+	}
+
+
+	.wrap ul{
+		position: absolute;
+		width: 800px;
+
+		/*完成时间、实现效果、匀速、无限循环*/
+		-webkit-animation: 5s move linear infinite;
+	}
+	.wrap ul li {
+		float: left;
+		width: 100px;
+		height: 100px;
+
+	}
+	.wrap li img{
+		width: 100px;
+		height: 100px;
+	}
+	/*设置关键帧*/
+	@-webkit-keyframes move{
+		0%{
+			left:0;
+		}
+		100%{
+			left:-400px;
+		}
+	}
+
+	.wrap:hover ul{
+		/*hover时停止移动，*/
+		-webkit-animation-play-state:paused;
+	}
+	</style>
+</head>
+<body>
+	<div class="wrap">
+		<ul>
+			<li><img src='image/womenday1.png'></li>
+			<li><img src='image/womenday2.png'></li>
+			<li><img src='image/womenday3.png'></li>
+			<li><img src='image/womenday4.png'></li>
+			<li><img src='image/womenday1.png'></li>
+			<li><img src='image/womenday2.png'></li>
+			<li><img src='image/womenday3.png'></li>
+			<li><img src='image/womenday4.png'></li>
+		</ul>
+	</div>
+</body>
+</html>
